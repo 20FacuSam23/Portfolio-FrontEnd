@@ -1,0 +1,19 @@
+
+h1 {
+    animation-duration: 10s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+      box-shadow: 40px 20px 70px 40px rgba(233, 232, 238, 1);
+    }
+  }
+  

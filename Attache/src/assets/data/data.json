@@ -1,0 +1,16 @@
+{
+    "Brand":
+        {
+            "texto1":"Hola",
+            "texto2":"Mundo"
+        },
+    
+    "Encabezado":
+    {
+    "navbar-brand":"Mi Attache",
+    "textoAlert1": "Esto es una alerta",
+    "textoAlert2":  "Esto es una alerta resaltada"  
+    }
+    
+
+}

@@ -4,17 +4,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
+import { BrandComponent } from './componentes/brand/brand.component';
+import { SobreMiComponent } from './componentes/sobre-mi/sobre-mi.component';
+import { AprendizajeComponent } from './componentes/aprendizaje/aprendizaje.component';
+import { VidaComponent } from './componentes/vida/vida.component';
+import { CambioComponent } from './componentes/cambio/cambio.component';
+import { FooterComponent } from './componentes/footer/footer.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
+import {CargarScriptService} from "./cargar-script.service";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    BrandComponent,
+    SobreMiComponent,
+    AprendizajeComponent,
+    VidaComponent,
+    CambioComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [CargarScriptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
