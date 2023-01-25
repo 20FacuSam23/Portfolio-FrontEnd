@@ -404,8 +404,9 @@ EL CSS DEL PEN ORIGINAL
 
 
 .card1 {
-	background: #0a184d;
-  opacity: 1;
+
+  background: transparent;
+  opacity: .8;
 }
 
 

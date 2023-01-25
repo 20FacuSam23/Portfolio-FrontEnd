@@ -7,8 +7,7 @@ import { AttacheService } from 'src/app/servicios/attache.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
-
-  miAttache:any;
+miAttache:any;
 constructor(private datosAttache:AttacheService){}
 ngOnInit():void{
  this.datosAttache.obtenerDatos().subscribe(data =>{console.log(data);
