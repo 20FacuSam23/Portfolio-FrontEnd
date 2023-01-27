@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
@@ -14,6 +13,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CargarScriptService} from "./cargar-script.service";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     VidaComponent,
     CambioComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
+    LoginComponent,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
