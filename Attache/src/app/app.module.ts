@@ -26,10 +26,11 @@ import { LoginComponent } from './login/login.component';
     VidaComponent,
     CambioComponent,
     FooterComponent,
+    LoginComponent,
     NavbarComponent,
   ],
   imports: [
-    LoginComponent,
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

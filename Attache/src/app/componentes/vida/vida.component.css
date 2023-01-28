@@ -37,6 +37,7 @@ EL CSS DEL PEN ORIGINAL
 }
 
 .card2:hover {
+  border:solid;
   color: rgb(88 199 250 / 100%);
   transition: color 1s;
 }
