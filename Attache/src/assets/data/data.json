@@ -10,5 +10,21 @@
     "navbarBrand":"Mi Attache",
     "textoAlert1": "Esto es una alerta",
     "textoAlert2":  "Esto es una alerta resaltada"  
+    },
+
+    "Cambio":
+    {
+        "nombre":"Facu"
+    },
+    "sobreMi":
+    {
+        "caracteristica1": "Responsabilidad",
+        "porcCaracteristica1":"64",
+        "caracteristica2": "Autogestión",
+        "porcCaracteristica2" : "86",
+        "caracteristica3":"Arbitraje",
+        "porcCaracteristica3":"61",
+        "caracteristica4":"Liderazgo",
+        "porcCaracteristica4":"61"
     }
 }

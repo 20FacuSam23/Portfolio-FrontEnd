@@ -151,91 +151,7 @@ border-top-right-radius: 5px;
 							color: #e64c65;
 						}
 
-/******************************************
-↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-ESTILOS PROPIOS DE LOS GRÄFICOS
-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ 
-GRAFICO LINEAL
-******************************************/
 
-.grafico {
-  padding: 2rem 1rem 1rem;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  color: #fff;
-  font-size: 80%;
-}
-.grafico span {
-  display: block;
-  position: absolute;
-  bottom: 3rem;
-  left: 2rem;
-  height: 0;
-  border-top: 2px solid;
-  transform-origin: left center;
-}
-.grafico span > span {
-  left: 100%; bottom: 0;
-}
-[data-valor='25'] {width: 75px; transform: rotate(-45deg);}
-[data-valor='8'] {width: 24px; transform: rotate(65deg);}
-[data-valor='13'] {width: 39px; transform: rotate(-45deg);}
-[data-valor='5'] {width: 15px; transform: rotate(50deg);}
-[data-valor='23'] {width: 69px; transform: rotate(-70deg);}
-[data-valor='12'] {width: 36px; transform: rotate(75deg);}
-[data-valor='15'] {width: 45px; transform: rotate(-45deg);}
-
-[data-valor]:before {
-  content: '';
-  position: absolute;
-  display: block;
-  right: -4px;
-  bottom: -3px;
-  padding: 4px;
-  background: #fff;
-  border-radius: 50%;
-}
-[data-valor='23']:after {
-  content: '+' attr(data-valor) '%';
-  position: absolute;
-  right: -2.7rem;
-  top: -1.7rem;
-  padding: .3rem .5rem;
-  background: #50597B;
-  border-radius: .5rem;
-  transform: rotate(45deg);  
-}
-[class^='eje-'] {
-  position: absolute;
-  left: 0;
-  bottom: 0rem;
-  width: 100%;
-  padding: 1rem 1rem 0 2rem;
-  height: 80%;
-}
-.eje-x {
-  height: 2.5rem;
-}
-.eje-y li {
-  height: 25%;
-  border-top: 1px solid #777;
-}
-[data-ejeY]:before {
-  content: attr(data-ejeY);
-  display: inline-block;
-  width: 2rem;
-  text-align: right;
-  line-height: 0;
-  position: relative;
-  left: -2.5rem;
-  top: -.5rem;
-} 
-.eje-x li {
-  width: 33%;
-  float: left;
-  text-align: center;
-}
 
 /******************************************
 GRAFICO CIRCULAR PIE CHART
@@ -285,28 +201,28 @@ p.center-date {
 
 #porcion1 .quesito {
     background-color: #E64C65;
-    transform: rotate(76deg);
+    transform: rotate(64deg);
   }
 #porcion2 {
-    transform: rotate(76deg);
+    transform: rotate(100deg);
   }
 #porcion2 .quesito {
     background-color: #11A8AB;
-    transform: rotate(140deg);
+    transform: rotate(86deg);
   }
 #porcion3 {
-    transform: rotate(215deg);
+    transform: rotate(190deg);
   }
 #porcion3 .quesito {
     background-color: #4FC4F6;
-    transform: rotate(113deg);
+    transform: rotate(61deg);
   }
 #porcionFin {
-    transform:rotate(-32deg);
+    transform:rotate(-80deg);
   }
 #porcionFin .quesito {
     background-color: #FCB150;
-    transform: rotate(32deg);
+    transform: rotate(61deg);
   }
 .nota-final {
   clear: both;
@@ -321,75 +237,7 @@ p.center-date {
   color: #FCB150;
   font-size: inherit;
 }
-/**************************
-BAR-CHART
-**************************/
-.grafico.bar-chart {
-  background: #3468AF;
-  padding: 0 1rem 2rem 1rem;
-  width: 100%;
-  height: 60%;
-  position: relative;
-  color: #fff;
-  font-size: 80%;
-}
-.bar-chart [class^='eje-'] {
-  padding: 0 1rem 0 2rem;
-  bottom: 1rem;
-}
-.bar-chart .eje-x {
-  bottom: 0;
-}
- .bar-chart .eje-y li {
-  height: 20%;
-  border-top: 1px solid #fff;
-}
-.bar-chart .eje-x li {
-  width: 14%;
-  position: relative;
-  text-align: left;
-}
-.bar-chart .eje-x li i {
-  transform: rotatez(-45deg) translatex(-1rem);
-  transform-origin: 30% 60%;
-  display: block;
-}
-.bar-chart .eje-x li:before {
-  content: '';
-  position: absolute;
-  bottom: 1.9rem;
-  width: 70%;
-  right: 5%;
-  box-shadow: 3px 0 rgba(0,0,0,.1), 3px -3px rgba(0,0,0,.1);
-}
-.bar-chart .eje-x li:nth-child(1):before {
-  background: #E64C65;  
-  height: 570%;
-}
-.bar-chart .eje-x li:nth-child(2):before {
-  background: #11A8AB;  
-  height: 900%;
-}
-.bar-chart .eje-x li:nth-child(3):before {
-  background: #FCB150;  
-  height: 400%;
-}
-.bar-chart .eje-x li:nth-child(4):before {
-  background: #4FC4F6;  
-  height: 290%;
-}
-.bar-chart .eje-x li:nth-child(5):before {
-  background: #FFED0D;  
-  height: 720%;
-}
-.bar-chart .eje-x li:nth-child(6):before {
-  background: #F46FDA;  
-  height: 820%;
-}
-.bar-chart .eje-x li:nth-child(7):before {
-  background: #15BFCC;  
-  height: 520%;
-}
+
 /*****************************
 USO NÚMEROS MÁGICOS EN ALGUNOS VALORES
 POR NO PARARME A ESTUDIAR A FONDO
@@ -444,7 +292,7 @@ EL CSS DEL PEN ORIGINAL
   border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
+    , #41a3be, rgba(0, 0, 0, 0.699) 43%, #c9c0d1);
     position: absolute;
     z-index: 1;
     top: -1%;
@@ -466,7 +314,7 @@ EL CSS DEL PEN ORIGINAL
   filter: blur(calc(var(--card-height) / 6));
   background-image: linear-gradient(
     var(--card-width)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
+    , #5ddcff, #3c67e3 43%, #f0eef3);
     opacity: 1;
   transition: opacity .5s;
   animation: spin 2.5s linear infinite;
