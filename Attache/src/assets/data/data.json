@@ -9,7 +9,10 @@
     {
     "navbarBrand":"Mi Attache",
     "textoAlert1": "Esto es una alerta",
-    "textoAlert2":  "Esto es una alerta resaltada"  
+    "textoAlert2":  "Contacto",
+    "textoAlert3":  "Sobre Mi",
+    "textoAlert4":  "Vida",
+    "textoAlert5":  "Curba de Aprendizaje"       
     },
 
     "Cambio":

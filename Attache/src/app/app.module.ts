@@ -14,8 +14,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {CargarScriptService} from "./cargar-script.service";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './login/login.component';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { AttacheComponent } from './componentes/attache/attache.component';
+const routes: Routes = [
+  {path: 'login', component: LoginComponent}
+ 
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,15 +36,22 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     LoginComponent,
     NavbarComponent,
+    IniciarSesionComponent,
+    AttacheComponent,
+    
   ],
   imports: [
     
+    RouterModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [CargarScriptService],
-  bootstrap: [AppComponent]
+  providers: [CargarScriptService,],
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }

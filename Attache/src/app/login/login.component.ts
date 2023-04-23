@@ -6,9 +6,20 @@ import { ActivatedRoute, Params } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  login: String='';
 
-  constructor (){}
-  ngOnInit(){}
+
+
+export class LoginComponent {
+  mensaje ="";
+  registrado = false;
+  nombre: string ="";
+  apellido:string ="";
+
+  registrarUsuario(){
+    this.registrado=true
+
+    this.mensaje="usuario registrado con éxito"
+
+    
+  }
 }
