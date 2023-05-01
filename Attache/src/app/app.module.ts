@@ -10,20 +10,16 @@ import { VidaComponent } from './componentes/vida/vida.component';
 import { CambioComponent } from './componentes/cambio/cambio.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CargarScriptService} from "./cargar-script.service";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { RegistroComponent} from './componentes/registro/registro.component';
 import { AttacheComponent } from './componentes/attache/attache.component';
-const routes: Routes = [
-  {path: 'login', component: LoginComponent}
- 
-];
+import { InterceptorService } from './servicios/interceptor.service';
+import { PagenotfoundComponent } from './componentes/pagenotfound/pagenotfound.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,14 +30,13 @@ const routes: Routes = [
     VidaComponent,
     CambioComponent,
     FooterComponent,
-    LoginComponent,
     NavbarComponent,
-    IniciarSesionComponent,
+    RegistroComponent,
     AttacheComponent,
-    
+    PagenotfoundComponent,
+  
   ],
   imports: [
-    
     RouterModule,
     BrowserModule,
     FormsModule,
@@ -51,7 +46,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     
   ],
-  providers: [CargarScriptService,],
+  providers: [CargarScriptService, {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }

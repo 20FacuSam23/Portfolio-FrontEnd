@@ -4,28 +4,23 @@
         style="width: 100%" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
         aria-valuemin="0" aria-valuemax="100">
         <div class="container-fluid">
-            <a class=" navbar-brand fs-1 bg-info text-wrap rounded-pill " style="width: 24rem;" href="#">{{miAttache.Encabezado.navbarBrand}}</a>{{miAttache.Encabezado.textoAlert1}}
+            <a class=" navbar-brand fs-1 bg-info text-wrap rounded-pill " style="width: 24rem;" href="#">{{miAttache.Encabezado.navbarBrand}}</a><button  class="btn btn-outline-danger rounded-pill nav-link" (click)="logout()" href="#" routerLinkActive="active" *ngIf="!authService.logIn" >{{miAttache.Encabezado.textoAlert1}}</button>
             <p class="placeholder-glow">
                 
-                    <button  class="btn btn-outline-info rounded-pill " routerLink="/cambio" >{{miAttache.Encabezado.textoAlert2}}</button>
-               
-              
-                    <button  class="btn btn-outline-info rounded-pill " routerLink="/vida">{{miAttache.Encabezado.textoAlert3}}</button>
-              
+                    <button  class="btn btn-outline-info rounded-pill " routerLink="/cambio" routerLinkActive="active" *ngIf="!authService.logIn" >{{miAttache.Encabezado.textoAlert2}}</button>
            
-                    <button  class="btn btn-outline-info rounded-pill " routerLink="/sobremi">{{miAttache.Encabezado.textoAlert4}}</button>
+                    <button  class="btn btn-outline-info rounded-pill " routerLink="/sobremi" routerLinkActive="active" *ngIf="!authService.logIn">{{miAttache.Encabezado.textoAlert3}}</button>
+
+                    <button  class="btn btn-outline-info rounded-pill " routerLink="/vida" routerLinkActive="active" *ngIf="!authService.logIn">{{miAttache.Encabezado.textoAlert4}}</button>
             
-                    <button  class="btn btn-outline-info rounded-pill " routerLink="/aprendizaje">{{miAttache.Encabezado.textoAlert5}}</button>
+                    <button  class="btn btn-outline-info rounded-pill " routerLink="/aprendizaje" routerLinkActive="active" *ngIf="!authService?.logIn">{{miAttache.Encabezado.textoAlert5}}</button>
               
             
 
-                <button class="btn btn-outline-info rounded-pill " type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Suscribite</button>
-
+              
 
                     
-                  <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+               
 
             <div class="offcanvas offcanvas-bottom " tabindex="-1" id="offcanvasBottom"
                 aria-labelledby="offcanvasBottomLabel">
@@ -49,8 +44,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-
+<h2 class="mb-5 fs-1 bg-info text-wrap rounded-pill " style="width: 24rem;">Iniciar Sesión</h2>
                     <ul class="list-group list-group-flush">
+                        
                         <li class="list-group-item">
                             
                             <div class="col-md">
@@ -70,8 +66,34 @@
                             
                             <div class="col-md">
                                 <div class="form-floating">
-                                  <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
-                                  <label for="floatingInputGrid">Email address</label>
+                                    
+                                    <form [formGroup]="form" class="mb-5" (ngSubmit)="onEnviar($event)">
+                                        <div class="mb-3">
+                                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                                          <input type="email" formControlName="email" [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                          <div *ngIf="Email?.errors && Email?.touched">
+                                    <p *ngIf="Email?.hasError('required')" class="text-danger">
+                                        El email es requerido.
+                                    </p>
+                                    <p *ngIf="Email?.hasError('email')" class="text-danger">
+                                    El formato del mail deve ser válido.
+                                    </p>
+                                          </div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                          <input type="password" formControlName="password" [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}" class="form-control" id="exampleInputPassword1">
+                                        <div *ngIf="Password?.errors && Password?.touched">
+                                            <p *ngIf="Password?.hasError('required')" class="text-danger">
+                                                La contraseña es requerida.
+                                            </p>
+                                            <p *ngIf="Password?.hasError('minlength')" class="text-danger">
+                                                La contraseña debe ser de 8 o más caracteres.
+                                            </p>
+                                        </div> 
+                                    </div>  
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                      </form>
                                 </div>
                               </div>
 
@@ -97,11 +119,14 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active"  routerLink="/login" [routerLinkActive]="'active'"  >Login</a>                           
+                            <button class="btn btn-outline-info rounded-pill " type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" routerLinkActive="active" *ngIf="!authService.logIn">Login</button>
+                                   
                             
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <button class="btn btn-primary rounded-pill" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">History</button>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

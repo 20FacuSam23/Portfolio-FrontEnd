@@ -1,20 +1,18 @@
+
 import { Component, OnInit } from '@angular/core';
-import { AttacheService } from 'src/app/servicios/attache.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {AuthService} from 'src/app/servicios/auth.service';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+
+
 @Component({
-  selector: 'app-encabezado',
-  templateUrl: './encabezado.component.html',
-  styleUrls: ['./encabezado.component.css']
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
 })
-export class EncabezadoComponent implements OnInit {
-  miAttache:any;
-  form:FormGroup;
-email='';
-password='';
-  constructor (public authService: AuthService, private datosAttache:AttacheService, private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router){
+export class RegistroComponent implements OnInit {
+form:FormGroup;
+  constructor (private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router){
 this.form=this.formBuilder.group(
   {
 email:['',[Validators.required,Validators.email]],
@@ -28,16 +26,9 @@ deviceInfo:this.formBuilder.group({
   }
 )
   }
-LogIn(): void{
-this.authService.login(this.email,this.password)
-}
-logout () {
-  localStorage.removeItem('token');
-}
   ngOnInit(): void {
-    this.datosAttache.obtenerDatos().subscribe(data =>{console.log(data);
-      this.miAttache=data;
-    })}
+    
+  }
   get Email()
   {
 return this.form.get('email');

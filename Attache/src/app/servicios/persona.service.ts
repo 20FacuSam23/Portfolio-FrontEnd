@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment.prod'
   providedIn: 'root'
 })
 export class PersonaService {
-  url:string= environment.apiURL + "persona";
+  url:string= environment.production + "persona";
 
   constructor(private http:HttpClient) {
 console.log("El servicio está corriendo");
