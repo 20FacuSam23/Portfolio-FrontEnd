@@ -6,20 +6,20 @@
         <div class="container-fluid">
             <a class=" navbar-brand fs-1 bg-info text-wrap rounded-pill " style="width: 24rem;"
                 href="#">{{miAttache.Encabezado.navbarBrand}}</a><button type="button"
-                class="btn btn-outline-danger rounded-pill nav-link" (click)="onLogOut()" *ngIf="isLogged">CERRAR SESION</button>
+                class="btn btn-outline-danger rounded-pill nav-link" (click)="onLogOut()" *ngIf="!isLogged">CERRAR SESION</button>
             <p class="placeholder-glow">
 
                 <button class="btn btn-outline-info rounded-pill " routerLink="/cambio" routerLinkActive="active"
-                    *ngIf="isLogged">{{miAttache.Encabezado.textoAlert2}}</button>
+                    *ngIf="!isLogged">{{miAttache.Encabezado.textoAlert2}}</button>
 
                 <button class="btn btn-outline-info rounded-pill " routerLink="/sobremi" routerLinkActive="active"
-                    *ngIf="isLogged">{{miAttache.Encabezado.textoAlert3}}</button>
+                    *ngIf="!isLogged">{{miAttache.Encabezado.textoAlert3}}</button>
 
                 <button class="btn btn-outline-info rounded-pill " routerLink="/vida" routerLinkActive="active"
-                    *ngIf="isLogged">{{miAttache.Encabezado.textoAlert4}}</button>
+                    *ngIf="!isLogged">{{miAttache.Encabezado.textoAlert4}}</button>
 
                 <button class="btn btn-outline-info rounded-pill " routerLink="/aprendizaje" routerLinkActive="active"
-                    *ngIf="isLogged">{{miAttache.Encabezado.textoAlert5}}</button>
+                    *ngIf="!isLogged">{{miAttache.Encabezado.textoAlert5}}</button>
 
 
 
