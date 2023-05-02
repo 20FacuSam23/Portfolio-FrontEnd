@@ -1,21 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {persona} from 'src/app/model/persona.model';
+import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
-fruta:string = 'manzana';
-verdura: string = 'lechuga';
-pi: number = 3.141592653559;
-ciudad= {
-  nombre: 'Bahia BLanca',
-  poblacion: 284776
-};
-helloWord = () =>{
-  return "Hola mundo!"
+export class FooterComponent implements OnInit {
+  persona : persona = new persona ("", "", "");
+constructor(public personaService:PersonaService){}
+
+ngOnInit(): void {
+this.personaService.getPersonas().subscribe(data=>{this.persona = data})
 }
-
-
 }

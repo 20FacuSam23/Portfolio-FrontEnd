@@ -15,10 +15,10 @@ import {CargarScriptService} from "./cargar-script.service";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { RegistroComponent} from './componentes/registro/registro.component';
+import { LoginComponent} from './componentes/login/login.component';
 import { AttacheComponent } from './componentes/attache/attache.component';
-import { InterceptorService } from './servicios/interceptor.service';
 import { PagenotfoundComponent } from './componentes/pagenotfound/pagenotfound.component';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { PagenotfoundComponent } from './componentes/pagenotfound/pagenotfound.c
     CambioComponent,
     FooterComponent,
     NavbarComponent,
-    RegistroComponent,
+    LoginComponent,
     AttacheComponent,
     PagenotfoundComponent,
   
@@ -46,7 +46,7 @@ import { PagenotfoundComponent } from './componentes/pagenotfound/pagenotfound.c
     ReactiveFormsModule,
     
   ],
-  providers: [CargarScriptService, {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent,]
 })
 export class AppModule { }
