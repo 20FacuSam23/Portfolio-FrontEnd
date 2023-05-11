@@ -4,12 +4,12 @@ import { faLinkedin, faYoutube, faFacebook, faInstagram, faGithub, faGoogle} fro
 import { faDownload, faPlus, faNetworkWired, faCircleNodes, faFingerprint} from '@fortawesome/free-solid-svg-icons';
 import { AttacheService } from 'src/app/servicios/attache.service';
 @Component({
-  selector: 'app-cambio',
-  templateUrl: './cambio.component.html',
-  styleUrls: ['./cambio.component.css']
+  selector: 'app-contacto',
+  templateUrl: './contacto.component.html',
+  styleUrls: ['./contacto.component.css']
 })
 
-export class CambioComponent implements OnInit {
+export class ContactoComponent implements OnInit {
   miAttache:any;
   myLinkedin = faLinkedin
   faLinkedin = faLinkedin

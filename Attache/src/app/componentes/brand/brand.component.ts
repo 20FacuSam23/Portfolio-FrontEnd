@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AttacheService } from 'src/app/servicios/attache.service';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
+
 @Component({
   selector: 'app-brand',
   templateUrl: './brand.component.html',
@@ -7,11 +9,24 @@ import { AttacheService } from 'src/app/servicios/attache.service';
 })
 
 export class BrandComponent implements OnInit {
-miAttache:any;
-constructor(private datosAttache:AttacheService){}
-ngOnInit():void{
- this.datosAttache.obtenerDatos().subscribe(data =>{console.log(data);
-  this.miAttache=data;
-});
+  isLogged = false;
+
+  constructor(private router: Router, private tokenService: TokenService) { }
+
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
+
+  login() {
+    this.router.navigate(['/login'])
+  }
 }
-}
+

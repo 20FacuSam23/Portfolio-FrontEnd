@@ -7,12 +7,12 @@
     
     "Encabezado":
     {
-    "navbarBrand":"Mi Attache",
+    "navbarBrand":"Attache",
     "textoAlert1": "LogOut",
-    "textoAlert2":  "Contacto",
+    "textoAlert2":  "Experiencia",
     "textoAlert3":  "Sobre Mi",
-    "textoAlert4":  "Vida",
-    "textoAlert5":  "Aprendizaje"       
+    "textoAlert4":  "Habilidades",
+    "textoAlert5":  "Formación"       
     },
 
     "Cambio":

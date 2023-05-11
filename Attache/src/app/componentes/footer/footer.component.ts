@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {persona} from 'src/app/model/persona.model';
-import { PersonaService } from 'src/app/service/persona.service';
+
+
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
-  persona : persona = new persona ("", "", "");
-constructor(public personaService:PersonaService){}
-
+export class FooterComponent implements OnInit{
+userLoginOn:boolean=false;
+constructor(){}
 ngOnInit(): void {
-this.personaService.getPersonas().subscribe(data=>{this.persona = data})
+  
 }
 }
