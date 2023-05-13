@@ -1,0 +1,35 @@
+<app-encabezado></app-encabezado>
+<div class="row">
+    <button class="btn btn-primary" type="button" routerLink="/attache/EditarCrearExperiencia" >Nueva Experiencia</button>
+    <h1>Experiencia</h1>
+    <div class="table-responsive">
+        <table class="table align-middle text-white">
+            <thead>
+                <tr>
+                    <td>EXPERIENCIA</td>
+                    <td>DESCRIPCIÓN</td>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Experiencia of experiencia">
+                    <td>{{Experiencia.nombreE}}</td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td><button class="btn btn-primary">EDITAR</button></td>
+                    <td><button class="btn btn-danger">BORRAR</button></td>
+                </tr>
+             
+                <tr>
+                    <td >...</td>
+                    <td>...</td>
+                    <td class="align-top">This cell is aligned to the top.</td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <app-footer></app-footer>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AttacheRoutingModule } from './attache-routing.module';
-import { SobreMiComponent } from './componentes/sobre-mi/sobreMi.component';
+import { ExperienciaComponent } from './componentes/Experiencia/experiencia.component';
 
 import { FormacionComponent } from './componentes/formacion/formacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BtnLoginComponent } from './componentes/btn-login/btn-login.component';
+import { EditarCrearExperienciaComponent } from './componentes/editar-crear-experiencia/editar-crear-experiencia.component';
 
 
 
@@ -30,7 +31,7 @@ import { BtnLoginComponent } from './componentes/btn-login/btn-login.component';
 
 @NgModule({
   declarations: [
-    SobreMiComponent,
+    ExperienciaComponent,
     EncabezadoComponent,
     FormacionComponent,
     HabilidadesComponent,
@@ -38,7 +39,8 @@ import { BtnLoginComponent } from './componentes/btn-login/btn-login.component';
    AttacheComponet, 
    EditarPersonaComponent,
 FooterComponent,
-BtnLoginComponent
+BtnLoginComponent,
+EditarCrearExperienciaComponent
    
     
   ],

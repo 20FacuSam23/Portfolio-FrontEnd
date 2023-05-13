@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { persona } from '../model/persona.model';
+import { Persona } from '../model/Persona.model';
 import { PersonaService } from '../servicios/persona.service';
 import { TokenService } from '../servicios/token.service';
 
@@ -11,7 +11,7 @@ import { TokenService } from '../servicios/token.service';
     styleUrls: ['./attache.css']
 })
 export class AttacheComponet implements OnInit {
-    persona: persona =null;
+    persona: Persona =null;
 
     constructor(private personaService: PersonaService, private tokenService: TokenService) { }
     isLogged = false;

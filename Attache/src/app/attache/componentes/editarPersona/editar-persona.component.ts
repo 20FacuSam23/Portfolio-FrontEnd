@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { persona } from 'src/app/model/persona.model';
+import { Persona } from 'src/app/model/Persona.model';
 import { ImageService } from 'src/app/servicios/image.service';
 import { PersonaService } from 'src/app/servicios/persona.service';
 import { TokenService } from 'src/app/servicios/token.service';
@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/servicios/token.service';
   styleUrls: ['./editar-persona.component.css']
 })
 export class EditarPersonaComponent implements OnInit{
-  persona: persona =null;
+  persona: Persona =null;
   
 constructor (public imageService:ImageService,private router:Router, private personaService:PersonaService, private activateRouter: ActivatedRoute,private tokenService:TokenService){}
 ngOnInit(): void {
