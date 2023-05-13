@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/servicios/token.service';
 
 
 
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit{
-userLoginOn:boolean=false;
-constructor(){}
-ngOnInit(): void {
-  
+isLogged =false;
+constructor(private tokenService:TokenService){}
+ngOnInit():void{
+  if(this.tokenService.getToken()){
+    this.isLogged=true;      
+  }
 }
 }

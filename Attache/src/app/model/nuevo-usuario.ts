@@ -6,7 +6,7 @@ export class NuevoUsuario {
     
 
 
-    constructor(nombre: string, nombreUsuario: string, password: string, email:string, ){
+    constructor(nombre: string, nombreUsuario: string, email:string, password: string ){
        this.nombre=nombre;
        this.nombreUsuario= nombreUsuario;
     this.email= email;

@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "attache-backend"
+  },
+  "targets": {
+    "attache-backend": {
+      "hosting": {
+        "Attache": [
+          "attache-backend"
+        ]
+      }
+    }
   }
 }

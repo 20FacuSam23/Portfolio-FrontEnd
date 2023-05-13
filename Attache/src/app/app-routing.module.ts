@@ -11,8 +11,7 @@ const routes: Routes = [
   
   
   {path: 'login', component: LoginComponent},
-  {path: 'attache', 
- loadChildren:() => import ('./attache/attache.module').then(m=>m.AttacheModule)},
+  {path: 'attache', loadChildren:() => import ('./attache/attache.module').then(m=>m.AttacheModule)},
  {path: 'registro', component:RegistroComponent},
   //{path: '**', redirectTo: 'attache'},
   {path: '',redirectTo:'login',pathMatch:'full'},

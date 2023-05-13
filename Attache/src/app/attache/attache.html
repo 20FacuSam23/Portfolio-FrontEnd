@@ -1,19 +1,34 @@
 <app-encabezado></app-encabezado>
-<!--<p *ngIf="!userLoginOn">Usuario No autenticado</p>
-<p *ngIf="userLoginOn">Usuario Autenticado</p>
-<div *ngIf="userLoginOn">
-    <p>id:{{userData?.id}}</p>
-    <p>user:{{userData?.user}}</p>
 
-    <p>fullName:{{userData?.fullName}}</p>
-    <p>position: {{userData?.position}}</p>
-    <p>ubicacion:{{userData?.ubicacion}}</p>
-    <p>email:{{userData?.email}}</p>
-   <p>image:{{userData?.image}}</p>
-   <p>mensaje:{{userData?.message}}</p>
-   <p>password:{{userData?.password}}</p>
-</div>-->
-<p id="nombre" >nombre:{{persona.nombre}}</p>
-    <p id="apellido">apellido: {{persona.apellido}}</p>
-    <p img="img">img:{{persona.img}}</p>
 
+    <div class="row">
+  <h1>Perfil</h1>
+
+ <div class="col-lg-11">
+ 
+  <button type="button" class="btn btn-small btn-primary mb-3" routerLink="/attache/editarPersona/1" *ngIf="isLogged">
+    Editar Persona
+  </button>
+  <table class="table">
+    <tbody>
+      <tr class="table bg-white">
+      <td><p>Nombre</p></td>
+      <td><p>Apellido</p></td>
+      <td><p >Fotito</p></td>   
+      </tr>
+      <tr class="table text-white">
+      <td><p >{{persona.nombre}}</p></td>
+      <td><p >{{persona.apellido}}</p></td>
+      <td><img src={{persona.img}} class="img-fluid" width="300"id="fotodeperfil"></td>   
+      </tr>
+      </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <span>
+        <h1>Desprición</h1>
+        <p>{{persona.descripcion}}</p>
+      </span>
+    </div>
+      </div>
+      <app-footer></app-footer>

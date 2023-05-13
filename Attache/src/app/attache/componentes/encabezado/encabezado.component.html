@@ -5,20 +5,20 @@
         aria-valuemin="0" aria-valuemax="100">
         <div class="container-fluid">
             <a class=" navbar-brand fs-1 bg-info text-wrap rounded-pill " style="width: 24rem;"
-                href="#">{{miAttache.Encabezado.navbarBrand}}</a>
+                href="/attache/attache">{{miAttache.Encabezado.navbarBrand}}</a>
             <p class="placeholder-glow">
 
-
-                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/contacto" routerLinkActive="active"
+                <app-btn-login></app-btn-login>
+                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/contacto" *ngIf="isLogged" routerLinkActive="active"
                     >{{miAttache.Encabezado.textoAlert3}}</button>
 
-                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/formacion" routerLinkActive="active"
+                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/formacion" *ngIf="isLogged"routerLinkActive="active"
                    >{{miAttache.Encabezado.textoAlert5}}</button>
 
-                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/sobreMi" routerLinkActive="active"
+                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/sobreMi" *ngIf="isLogged" routerLinkActive="active"
                     >{{miAttache.Encabezado.textoAlert2}}</button>
 
-                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/habilidades" routerLinkActive="active"
+                <button class="btn btn-outline-info rounded-pill " routerLink="/attache/habilidades" *ngIf="isLogged" routerLinkActive="active"
                     >{{miAttache.Encabezado.textoAlert4}}</button>
 
 

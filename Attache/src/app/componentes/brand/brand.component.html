@@ -1,8 +1,12 @@
 <nav class="navbar bg-body-tertiary bg-secondary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><div class="row">
-      
-      
+      <div *ngIf="!isLogged">
+        <p >Usuario No autenticado</p>
+      </div>
+      <div *ngIf="isLogged"> 
+        <p >Usuario Autenticado</p>
+      </div>
   </div></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +24,7 @@
           </li>  
           <li class="nav-item" >
             <button type="button"
-            class="btn btn-outline-success rounded-pill nav-link" (click)="login()"  *ngIf="!isLogged">Ingresar Sesion</button>
+            class="btn btn-outline-success rounded-pill nav-link" (click)="login()" routerLink="/login" *ngIf="!isLogged">Ingresar Sesion</button>
           </li>
         </ul>
       </div>

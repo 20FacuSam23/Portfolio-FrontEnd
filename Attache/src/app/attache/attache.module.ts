@@ -15,6 +15,13 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { AttacheComponet } from './attache';
+import { interceptorProvider } from '../servicios/interceptor.service';
+import { AppComponent } from '../app.component';
+import { EditarPersonaComponent } from './componentes/editarPersona/editar-persona.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { FooterComponent } from './componentes/footer/footer.component';
+import { BtnLoginComponent } from './componentes/btn-login/btn-login.component';
 
 
 
@@ -28,7 +35,10 @@ import { AttacheComponet } from './attache';
     FormacionComponent,
     HabilidadesComponent,
     ContactoComponent, 
-   AttacheComponet
+   AttacheComponet, 
+   EditarPersonaComponent,
+FooterComponent,
+BtnLoginComponent
    
     
   ],
@@ -38,7 +48,13 @@ import { AttacheComponet } from './attache';
     AttacheRoutingModule, 
     NgCircleProgressModule.forRoot({}),
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     
-  ]
+  ],
+  providers: [
+    interceptorProvider
+  ],
+  bootstrap: [AppComponent,]
 })
 export class AttacheModule { }

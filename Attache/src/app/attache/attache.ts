@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { persona } from '../model/persona.model';
 import { PersonaService } from '../servicios/persona.service';
+import { TokenService } from '../servicios/token.service';
 
 
 @Component({
@@ -10,12 +11,25 @@ import { PersonaService } from '../servicios/persona.service';
     styleUrls: ['./attache.css']
 })
 export class AttacheComponet implements OnInit {
-    persona: persona = new persona("", "", "");
+    persona: persona =null;
 
-    constructor(public personaService: PersonaService) {
-    }
+    constructor(private personaService: PersonaService, private tokenService: TokenService) { }
+    isLogged = false;
     ngOnInit(): void {
-        this.personaService.getPersona().subscribe(data => { this.persona = data })
+        this.cargarPersona();
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+        } else {
+            this.isLogged = false;
+        }
     }
+
+    cargarPersona(): void {
+        this.personaService.detail(1).subscribe(data => { this.persona = data; }
+        )
+
+    }
+
 }
+
 

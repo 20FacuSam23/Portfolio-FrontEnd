@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AttacheService } from 'src/app/servicios/attache.service';
+import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-encabezado',
   templateUrl: './encabezado.component.html',
@@ -9,18 +10,22 @@ import { AttacheService } from 'src/app/servicios/attache.service';
 export class EncabezadoComponent implements OnInit {
 
 
+  isLogged = false;
+ 
+
   miAttache:any;
-  constructor(private datosAttache:AttacheService, private router: Router) { }
+  constructor(private datosAttache:AttacheService, private router: Router, private tokenService:TokenService) { }
   ngOnInit(): void {
     this.datosAttache.obtenerDatos().subscribe(data =>{console.log(data);
       this.miAttache=data;
+      if (this.tokenService.getToken()) {
+        this.isLogged = true;
+    } else {
+        this.isLogged = false;
+    }
     });
   }
-  onLogOut(): void {
-   
-    window.location.reload();
-
-  }
+ 
 
   login() {
     this.router.navigate(['/login'])
