@@ -19,11 +19,10 @@ import { interceptorProvider } from '../servicios/interceptor.service';
 import { AppComponent } from '../app.component';
 import { EditarPersonaComponent } from './componentes/editarPersona/editar-persona.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BtnLoginComponent } from './componentes/btn-login/btn-login.component';
-import { EditarCrearExperienciaComponent } from './componentes/editar-crear-experiencia/editar-crear-experiencia.component';
-
+import { EditarExperienciaComponent } from './componentes/editar-crear-experiencia/editar-experiencia.component';
+import { CrearExperienciaComponent } from './componentes/editar-crear-experiencia/crear-experiencia.component';
 
 
 
@@ -40,7 +39,8 @@ import { EditarCrearExperienciaComponent } from './componentes/editar-crear-expe
    EditarPersonaComponent,
 FooterComponent,
 BtnLoginComponent,
-EditarCrearExperienciaComponent
+EditarExperienciaComponent,
+CrearExperienciaComponent,
    
     
   ],

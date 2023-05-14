@@ -21,7 +21,8 @@ export class BtnLoginComponent {
   }
   onLogOut(): void {
     this.tokenService.logOut();
-    window.location.reload();
+    //window.location.reload();
+    this.router.navigate(['/attache/attache'])
   }
 
   login() {

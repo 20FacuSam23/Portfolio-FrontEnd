@@ -9,6 +9,7 @@ export const environment = {
     messagingSenderId: '911239997968',
     measurementId: 'G-0TML98EKGC',
   },
-  production:false,
-  URL:'http://localhost:8080/'
+  production:true,
+  URL:"https://attache-backend.onrender.com",
+  //URL:'http://localhost:8080/'
 };

@@ -4,11 +4,11 @@ import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 
 @Component({
-  selector: 'app-editar-crear-experiencia',
-  templateUrl: './editar-crear-experiencia.component.html',
-  styleUrls: ['./editar-crear-experiencia.component.css']
+  selector: 'app-crear-experiencia',
+  templateUrl: './crear-experiencia.component.html',
+  styleUrls: ['./crear-experiencia.component.css']
 })
-export class EditarCrearExperienciaComponent {
+export class CrearExperienciaComponent {
 nombreE: string ="";
 descripcionE: string = "";
 

@@ -26,4 +26,14 @@ ngOnInit(): void {
   cargarExperiencia(): void {
     this.experienciaService.lista().subscribe(data => { this.experiencia = data });
   }
+  delete(id?:number){
+    if (id!=undefined)
+    this.experienciaService.deleteExperiencia(id).subscribe(
+      data=>{
+        this.cargarExperiencia();
+      }, err=>{
+        alert("No se pudo borrar la experiencia");
+      }
+    )
+  }
 }

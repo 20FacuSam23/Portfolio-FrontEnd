@@ -9,13 +9,15 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 
 import { AttacheComponet } from './attache';
 import { EditarPersonaComponent } from './componentes/editarPersona/editar-persona.component';
-import { EditarCrearExperienciaComponent } from './componentes/editar-crear-experiencia/editar-crear-experiencia.component';
+import { CrearExperienciaComponent } from './componentes/editar-crear-experiencia/crear-experiencia.component';
+import { EditarExperienciaComponent } from './componentes/editar-crear-experiencia/editar-experiencia.component';
 
 
 const routes: Routes = [{
   path: '',
   children: [
-    {path:'EditarCrearExperiencia', component:EditarCrearExperienciaComponent},
+    {path:'editarExperiencia/:id', component:EditarExperienciaComponent},
+    {path:'crearExperiencia', component:CrearExperienciaComponent},
     { path: 'attache', component: AttacheComponet },
     { path: 'experiencia', component: ExperienciaComponent },
     { path: 'formacion', component: FormacionComponent },

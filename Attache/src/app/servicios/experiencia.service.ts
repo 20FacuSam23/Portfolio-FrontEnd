@@ -28,6 +28,6 @@ public saveExperiencia(experiencia:Experiencia): Observable<any> {
 }  
 
 public deleteExperiencia(id:number): Observable<any> {
-  return this.httpClient.delete<any>(this.URL + `borrar/${id}`);
+  return this.httpClient.delete<any>(this.URL + `delete/${id}`);
 }
 }
